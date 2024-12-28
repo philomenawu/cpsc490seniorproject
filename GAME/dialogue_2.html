@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="dialogue-container2">
+        <div id="text-container2">
+            <div id="dialogue-text2"></div>
+        </div>
+        <button id="next-button2">></button>
+    </div>
+    <script>
+// Dialogue Script
+const dialogue = [
+    `You stop in your tracks.`,
+    `The noisy echoes from your footsteps reverberate across the mountain.`,
+    `The light from your lamp softly crackles.`,
+    `You look above the canopy of trees to see a river of stars.`,
+    `You recall a children's tale of the old hare on the moon.`,
+    `...`,
+    `Why did you stay?`,
+    `...`,
+    `While lost in your thoughts, you hear a low humming.`,
+    `In the corner of your eye, you see a small black orb with what looks to be a pair of glowing eyes...`,
+     {
+        options: [
+            {text: `> Curious, you take a careful step towards it.`, 
+            output: `It grows larger and larger until it's suddenly looming over you.` },
+            {text: `> Cautious, you swing your lamp towards it.`, 
+            output: `The black orb dissipates into whispy smoke before joining back together to form a towering figure`},
+        ]
+     },
+     `Standing still, you watch it float above you towards your house.`
+];
+
+// Track current dialogue line
+let dialogueIndex = 0;
+
+// Iterate through dialogue lines
+function handleDialogue() {
+    const dialogueContainer = document.getElementById('dialogue-text2');
+    const textContainer = document.getElementById('text-container2');
+    const nextButton = document.getElementById('next-button2');
+
+    // Make links for options
+    if (dialogueIndex < dialogue.length) {
+        if (typeof dialogue[dialogueIndex] === 'object' && dialogue[dialogueIndex].options) {
+            dialogue[dialogueIndex].options.forEach((option, index) => {
+                nextButton.style.display = 'none';
+                const optionElement = document.createElement('a');
+                optionElement.href = '#';
+                optionElement.innerText = option.text;
+                optionElement.style.color = 'white';
+                optionElement.addEventListener('click', () => {
+                    dialogueContainer.innerHTML += `<p>${option.output}</p>`;
+                    nextButton.style.display = 'flex';
+                    const allOptions = dialogueContainer.querySelectorAll('a');
+                    allOptions.forEach((link) => {
+                    link.style.display = 'none';
+                    });
+                });
+                dialogueContainer.appendChild(optionElement);
+                dialogueContainer.appendChild(document.createElement('br'));
+                dialogueContainer.appendChild(document.createElement('br'));
+            });
+            dialogueIndex++; 
+        }
+        // Display dialogue lines
+        else {
+            dialogueContainer.innerHTML = `<p>${dialogue[dialogueIndex]}</p>`;
+            dialogueIndex++;
+        }
+    } 
+    // Close dialogue scene
+    else {
+        window.close();
+    }
+}
+
+// Event listener for "next" button in dialogue scene
+document.getElementById('next-button2').addEventListener('click', handleDialogue);
+window.onload = function() {
+    handleDialogue();
+}
+    </script>
+</body>
+</html>

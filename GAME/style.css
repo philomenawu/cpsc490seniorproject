@@ -1,0 +1,355 @@
+body {
+    background-color: black;
+    color: yellowgreen;
+    font-family: monospace;
+    height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    /* transition (https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/) */
+    animation: fadeInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Game Instructions */
+#menu-container {
+    position: fixed;
+    width: 100%;
+    height: 80%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#menu-container.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#instructions {
+    background-color: rgb(0, 0, 0);
+    margin: 25% auto;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    width: 50vw;
+    color: yellowgreen;
+}
+
+@media (min-width: 769px) {
+    #instructions {
+        width: 25vw;
+    }
+}
+
+#menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: monospace;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid #ffffff;
+    color: yellowgreen;
+
+}
+
+#menu-button:hover,
+#menu-button:focus {
+    background-color: white;
+    color: black;
+}
+
+.menuclose-btn {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.menuclose-btn:hover,
+.menuclose-btn:focus {
+color: gray;
+text-decoration: none;
+cursor: pointer;
+}
+
+/* Game Container */
+#container {
+    height: 50vh;
+    width: 55vw;
+    padding: 20px;
+    background-color: #000;
+    border: 2px solid white;
+    overflow-y: auto;
+}
+
+#textoutput {
+    height: 45vh;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#textoutput > :first-child {
+    margin-top: auto !important;
+}
+
+
+#inputcontainer {
+    display: flex;
+    align-items: center;
+}
+
+#prompt {
+    margin-right: 10px;
+}
+
+#inputwrapper {
+    display: inline-block;
+    border: none;
+}
+
+#userinput {
+    border: none;
+    background: transparent;
+    font-family: monospace;
+    outline: none;
+    border: 0.5px dashed yellowgreen;
+    width: 100%;
+    color: yellowgreen;
+}
+
+/* Dialogue Scene */
+#dialogue-container {
+    position: absolute;
+    background-color: #000000;
+    display: none; 
+    z-index: 999;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dialogue Scene */
+#dialogue-container2 {
+    position: absolute;
+    background-color: #000000;
+    display: flex; 
+    z-index: 999;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+
+#text-container {
+    height: 50vh;
+    width: 55vw;
+    text-align: left; 
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#text-container2 {
+    height: 50vh;
+    width: 55vw;
+    text-align: left; 
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+}
+
+#next-button {
+    position: absolute;
+    margin-top: 50%;
+    padding: 10px 15px;
+    font-size: 16px;
+    display: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border: 2px solid white;
+    color: yellowgreen;
+    cursor: pointer;
+}
+
+#next-button:hover {
+    background-color: white;
+    color: black;
+}
+
+#next-button2 {
+    position: absolute;
+    margin-top: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border: 2px solid white;
+    color: yellowgreen;
+    cursor: pointer;
+    display: flex; 
+}
+
+#next-button2:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Journal */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0);
+  }
+  
+  .popup-content {
+    background-color: rgb(255, 255, 255);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    width: 100%;
+    max-width: 17vw;
+    color: black;
+    font-family: "Nothing You Could Do", cursive;;
+  }
+
+  .journalclose-btn {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .journalclose-btn:hover,
+  .journalclose-btn:focus {
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /*Lamp Effect  */
+.glowing-background {
+    background: radial-gradient(circle at center, #ffc11f 25%, #fe650d 45%, rgba(0, 0, 0, 0.95) 90%);
+    background-size: 100% 100%;
+    animation: glowing 4s ease-in-out infinite;
+}
+  
+@keyframes glowing {
+    0% {
+        background: radial-gradient(circle at center, #ffc11f 25%, #fe650d 40%, rgba(0, 0, 0, 0.90) 80%);
+    }
+    25% {
+        background: radial-gradient(circle at center, #ffc11f 25%, #fe650d 43%, rgba(0, 0, 0, 0.90) 83%);
+    }
+    50% {
+        background: radial-gradient(circle at center, #ffc11f 25%, #fe650d 41%, rgba(0, 0, 0, 0.90) 82%);
+    }
+    75% {
+        background: radial-gradient(circle at center, #ffc11f 25%, #fe650d 45%, rgba(0, 0, 0, 0.90) 84%);
+    }
+    100% {
+        background: radial-gradient(circle at center, #ffc11f 25%, #fe650d 42%, rgba(0, 0, 0, 0.90) 86%);
+    }
+}
+
+.glowing-background2 {
+    background: radial-gradient(circle at center, #000000 5%, #141414 45%, rgba(21, 21, 21, 0.95) 90%);
+    background-size: 100% 100%;
+    animation: glowing2 4s ease-in-out infinite;
+}
+  
+@keyframes glowing2 {
+    0% {
+        background: radial-gradient(circle at center, #000000 5%, #141414 40%, rgba(21, 21, 21, 0.95) 80%);
+    }
+    25% {
+        background: radial-gradient(circle at center, #000000 5%, #141414 43%, rgba(21, 21, 21, 0.95) 83%);
+    }
+    50% {
+        background: radial-gradient(circle at center, #000000 5%, #141414 41%, rgba(21, 21, 21, 0.95) 82%);
+    }
+    75% {
+        background: radial-gradient(circle at center, #000000 5%, #141414 45%, rgba(21, 21, 21, 0.95) 84%);
+    }
+    100% {
+        background: radial-gradient(circle at center, #000000 5%, #141414 42%, rgba(21, 21, 21, 0.95) 86%);
+    }
+}
+
+/* Outside */
+#myCanvas {
+    height: 50vh;
+    width: 30vw;
+    background-color: black;
+    border: 2px solid white;
+    overflow-y: auto;
+}
+
+#myCanvas5 {
+    height: 50vh;
+    width: 30vw;
+    background-color: black;
+    border: 2px solid white;
+    overflow-y: auto;
+}
+
+#myCanvas2 {
+    height: 60vh;
+    width: 35vw;
+    background-color: black;
+    border: 2px solid white;
+    overflow-y: auto;
+}
+
+#myCanvas3 {
+    height: 75vh;
+    width: 45vw;
+    background-color: black;
+    border: 2px solid white;
+    overflow-y: auto;
+}
+
+#myCanvas4 {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+#noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    border-right: 2px solid #ccc;
+}
