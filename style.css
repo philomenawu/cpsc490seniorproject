@@ -55,9 +55,6 @@ body {
     #instructions {
         width: 25vw;
     }
-    .popup-content {
-        width: 25vw;
-    }
 }
 
 #menu-button {
@@ -247,7 +244,8 @@ body {
     width: 50vw;
     height: 50vh;
     color: black;
-    font-family: "Nothing You Could Do", cursive;;
+    font-family: "Nothing You Could Do", cursive;
+    overflow-y: auto;
   }
 
 @media (min-width: 769px) {

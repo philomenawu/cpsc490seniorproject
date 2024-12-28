@@ -71,7 +71,7 @@ const gameData = {
             'examine wife':{output: `Despite the years together, she doesn't look to have aged since the two of you first met. 
                         She looks even younger when she's asleep.`},
             'wake up wife':{ output: `Seeing how tired she was when you got home, you'd rather not wake her up right now.`},
-            'help': { output: `VALID COMMAND EXAMPLES: look, go north, go south, go east, go west, examine [item], pick up [item], take [item], ****.`}
+            'help': { output: `VALID COMMAND EXAMPLES: look, go north, go south, go east, go west, examine [item], pick up [item], take [item].`}
         }
     },
     kitchen: {
@@ -89,7 +89,7 @@ const gameData = {
                     all feelings in both his legs after a nightmare. There was no history of diseases or recent illness, but you distinctly remember him being delirious about a 
                     'mountain spirit' seeking out its vengeance on him...`},
             'examine lists': {output: `Corn, Pumpkin, Oxtail...looks like we're having sabuti for dinner tomorrow.`},
-            'help': { output: `VALID COMMAND EXAMPLES: look, go north, go south, go east, go west, examine [item], pick up [item], etc.`}
+            'help': { output: `VALID COMMAND EXAMPLES: look, go north, go south, go east, go west, examine [item], pick up [item].`}
         }
     },
     diningroom: {
@@ -119,7 +119,7 @@ const gameData = {
                         gameData.diningroom.commands['look'].output = `The dining table is cluttered with crumpled up homework sheets and dull pencils.`
                         }
                       }},
-            'help': { output: `VALID COMMAND EXAMPLES: look, go north, go south, go east, go west, examine [item], pick up [item], etc.`}
+            'help': { output: `VALID COMMAND EXAMPLES: look, go north, go south, go east, go west, examine [item], pick up [item].`}
             }
         }
     };
