@@ -4,7 +4,7 @@ const dialogue = [
     `Nurse: ဆရာဝန်, I apologize for the late call, but a villager is here in regards to his wife.`,
     `You: I see, what's wrong?`,
     `Nurse: Apparently his wife has been vomitting all night with a fever that has not gone down since earlier this morning, 
-     and her symptoms seem to have worsened. He was unable to carry her to the hospital, so she's still bedridden back in their house.`,
+     and her symptoms seem to have worsened. She remains bedridden back in their house as he was unable to bring her to the hospital.`,
     `You: Can you put the husband on the phone? `,
     `Villager: Hello, ဆရာဝန်? Can you hear me? ဆရာဝန်, please, I don't know what to do. My wife- she's a sickly woman and tends to get
      the cold every once and a while, but she's never gone through anything like this. She can barely speak. I'm begging you, please come take a look at her.`,
@@ -26,13 +26,13 @@ function startDialogueScene() {
     dialogueIndex = 0;
     document.getElementById('text-container').style.display = 'block';
     document.getElementById('dialogue-container').style.display = 'flex';
-    document.getElementById('next-button').style.display = 'flex';
+    document.getElementById('next-button').style.display = 'block';
     handleDialogue();
 }
 
 // Iterate through dialogue lines
 function handleDialogue() {
-    const dialogueContainer = document.getElementById('dialogue-text');
+    const dialogueContainer = document.getElementById('dialogue-container');
     const textContainer = document.getElementById('text-container');
     const nextButton = document.getElementById('next-button');
 
@@ -47,19 +47,21 @@ function handleDialogue() {
                 optionElement.innerText = option.text;
                 optionElement.style.color = 'white';
                 optionElement.addEventListener('click', () => {
-                    dialogueContainer.innerHTML += `<p>${option.output}</p>`;
-                    nextButton.style.display = 'flex';
+                    textContainer.innerHTML += `<p>${option.output}</p>`;
+                    nextButton.style.display = 'block';
+                    textContainer.scrollTop = textContainer.scrollHeight;
                 });
-                dialogueContainer.appendChild(optionElement);
-                dialogueContainer.appendChild(document.createElement('br'));
-                dialogueContainer.appendChild(document.createElement('br'));
+                textContainer.appendChild(optionElement);
+                textContainer.appendChild(document.createElement('br'));
+                textContainer.appendChild(document.createElement('br'));
             });
             dialogueIndex++; 
         }
         // Display dialogue lines
         else {
-            dialogueContainer.innerHTML += `<p>${dialogue[dialogueIndex]}</p>`;
+            textContainer.innerHTML += `<p>${dialogue[dialogueIndex]}</p>`;
             dialogueIndex++;
+            textContainer.scrollTop = textContainer.scrollHeight;
         }
     } 
     // Close dialogue scene

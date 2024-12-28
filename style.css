@@ -55,6 +55,9 @@ body {
     #instructions {
         width: 25vw;
     }
+    .popup-content {
+        width: 25vw;
+    }
 }
 
 #menu-button {
@@ -86,9 +89,9 @@ body {
   
 .menuclose-btn:hover,
 .menuclose-btn:focus {
-color: gray;
-text-decoration: none;
-cursor: pointer;
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Game Container */
@@ -145,8 +148,10 @@ cursor: pointer;
     display: none; 
     z-index: 999;
     text-align: center; 
-    justify-content: center;
     align-items: center;
+    height: 50vh;
+    padding: 20px;
+    flex-direction: column;
 }
 
 /* Dialogue Scene */
@@ -161,12 +166,14 @@ cursor: pointer;
 }
 
 #text-container {
-    height: 50vh;
+    height: 80%;
     width: 55vw;
     text-align: left; 
     justify-content: center;
     align-items: center;
     display: none;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #text-container2 {
@@ -179,8 +186,7 @@ cursor: pointer;
 }
 
 #next-button {
-    position: absolute;
-    margin-top: 50%;
+    margin-top: auto;
     padding: 10px 15px;
     font-size: 16px;
     display: none;
@@ -221,39 +227,48 @@ cursor: pointer;
 /* Journal */
 .popup {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(0, 0, 0);
   }
   
-  .popup-content {
+.popup-content {
     background-color: rgb(255, 255, 255);
-    margin: 15% auto;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     border: 1px solid #ffffff;
-    width: 100%;
-    max-width: 17vw;
+    width: 50vw;
+    height: 50vh;
     color: black;
     font-family: "Nothing You Could Do", cursive;;
   }
 
-  .journalclose-btn {
+@media (min-width: 769px) {
+    .popup-content {
+        width: 25vw;
+    }
+}
+
+.journalclose-btn {
     color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
   
-  .journalclose-btn:hover,
-  .journalclose-btn:focus {
+.journalclose-btn:hover,
+.journalclose-btn:focus {
     color: gray;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
   /*Lamp Effect  */
 .glowing-background {
