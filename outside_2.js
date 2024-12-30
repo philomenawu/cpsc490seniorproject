@@ -15,8 +15,20 @@ function drawCharacter() {
   ctx.closePath();
 }
 
-const noiseContainer = document.getElementById("noise");
-const noises = ["rustle", "stick", "crunch", "snap", "bush", "bramble", "leaves", "rock", "branch"];
+// Function to highlight a button
+function highlightButton(buttonId) {
+  // Remove active class from all buttons
+  document.getElementById('left-button').classList.remove('active');
+  document.getElementById('right-button').classList.remove('active');
+  document.getElementById('up-button').classList.remove('active');
+  document.getElementById('down-button').classList.remove('active');
+
+  // Add active class to the clicked or pressed button
+  document.getElementById(buttonId).classList.add('active');
+}
+
+// const noiseContainer = document.getElementById("noise");
+// const noises = ["rustle", "stick", "crunch", "snap", "bush", "bramble", "leaves", "rock", "branch"];
 
 // Event listener for arrow keys
 document.addEventListener("keydown", (event) => {
@@ -24,31 +36,35 @@ document.addEventListener("keydown", (event) => {
     case "ArrowLeft":
       if (x > 10) {
         x -= 30; 
-        const randomNoise = noises[Math.floor(Math.random() * noises.length)];
-        noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
+        // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
+        // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
       }
+      highlightButton('left-button');
       break;
     case "ArrowRight":
       if (x < canvas.width - 10) {
         x += 30;
-        const randomNoise = noises[Math.floor(Math.random() * noises.length)];
-        noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
+        // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
+        // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
       }
+      highlightButton('right-button');
       break;
     case "ArrowUp":
       if (y > 20) {
         y -= 30;
-        const randomNoise = noises[Math.floor(Math.random() * noises.length)];
-        noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
+        // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
+        // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
       }
+      highlightButton('up-button');
       break;
     case "ArrowDown":
       if (y + 5 >= canvas.height) {
         window.location.href = "outside_3.html";
       }
       y += 30;
-      const randomNoise = noises[Math.floor(Math.random() * noises.length)];
-      noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
+      // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
+      // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
+      highlightButton('down-button');
       break;
   }
     // Update story text
@@ -68,6 +84,36 @@ document.addEventListener("keydown", (event) => {
       void typewriterDiv.offsetWidth;
       typewriterDiv.classList.add("typewriter");
     }
+  drawCharacter();
+});
+
+// Event listeners for button clicks
+document.getElementById('left-button').addEventListener('click', () => {
+  if (x > 10) {
+    x -= 30;
+  }
+  drawCharacter();
+});
+
+document.getElementById('right-button').addEventListener('click', () => {
+  if (x < canvas.width - 10) {
+    x += 30;
+  }
+  drawCharacter();
+});
+
+document.getElementById('up-button').addEventListener('click', () => {
+  if (y > 20) {
+    y -= 30;
+  }
+  drawCharacter();
+});
+
+document.getElementById('down-button').addEventListener('click', () => {
+  if (y + 5 >= canvas.height) {
+    window.location.href = "outside_2.html";
+  }
+  y += 30;
   drawCharacter();
 });
 
