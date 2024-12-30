@@ -69,20 +69,16 @@ document.addEventListener("keydown", (event) => {
   }
     // Update story text
     if (y >= canvas.height / 3 && y < canvas.height / 3 + 30) { 
-      const typewriterText = document.querySelector(".typewriter p");
-      typewriterText.textContent = "They think highly of me for it, as if I'm some sort of savior...";
-      const typewriterDiv = document.querySelector(".typewriter");
-      typewriterDiv.classList.remove("typewriter");
-      void typewriterDiv.offsetWidth;
-      typewriterDiv.classList.add("typewriter");
+      const typewriterText = document.querySelector(".typewriter");
+      typewriterText.textContent = "They think highly of me for it, as if I'm some savior...";
+      typewriterText.style.color = "black";
+      typewriterText.style.fontStyle = "italic";
     }
     else if (y >= (2 * canvas.height) / 3 && y < (2 * canvas.height) / 3 + 30) {
-      const typewriterText = document.querySelector(".typewriter p");
+      const typewriterText = document.querySelector(".typewriter");
       typewriterText.textContent = "...I wonder where I'd be if I hadn't stayed on this mountain...";
-      const typewriterDiv = document.querySelector(".typewriter");
-      typewriterDiv.classList.remove("typewriter");
-      void typewriterDiv.offsetWidth;
-      typewriterDiv.classList.add("typewriter");
+      typewriterText.style.color = "black";
+      typewriterText.style.fontStyle = "italic";
     }
   drawCharacter();
 });
@@ -111,7 +107,7 @@ document.getElementById('up-button').addEventListener('click', () => {
 
 document.getElementById('down-button').addEventListener('click', () => {
   if (y + 5 >= canvas.height) {
-    window.location.href = "outside_2.html";
+    window.location.href = "outside_3.html";
   }
   y += 30;
   drawCharacter();

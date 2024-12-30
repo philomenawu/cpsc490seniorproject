@@ -29,7 +29,6 @@
         .typewriter p {
             overflow-x: auto; 
             white-space: nowrap;
-            border-right: .15em solid yellowgreen; 
             display: inline-block;
             word-break: break-word;
             margin: 0 auto;
@@ -45,22 +44,7 @@
             from { width: 0 }
             to { width: 100% }
         }
-        .typewriterbottom p {
-            overflow: hidden; 
-            white-space: nowrap;
-            border-right: .15em solid yellowgreen; 
-            margin: 0 auto;
-            animation: 
-            typing 8s steps(62, end),
-            blink-caret .75s step-end infinite;
-            font-style: italic;
-        }
-        /* The typing effect */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
+
         /* Direction buttons container (3 columns) */
         .direction-buttons {
             display: grid;
@@ -121,7 +105,7 @@
     <button id="menu-button">?</button>
     <div class="container">
         <div class="typewriter">
-            <p><span>My mother would always ask why I wanted to stay in this little village...</span></p>
+            <p><span>...But who else would have stayed if not me...</span></p>
         </div>
     </div>
         <div id="canvas-container2">
