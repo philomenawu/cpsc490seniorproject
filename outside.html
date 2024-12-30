@@ -10,22 +10,24 @@
         body {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
             margin: 0;
         }
         .container {
-            display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             gap: 20px;
             position: relative;
-            margin-top: 50px;
+            margin-top: 80px;
+            padding: 10px;
+            margin-bottom: 30px;
+            width: auto;
+            max-width: 50%;
+            white-space: normal;
+            background-color: white;
         }
         .typewriter p {
-            overflow: hidden; 
+            overflow-x: auto; 
             white-space: nowrap;
             border-right: .15em solid yellowgreen; 
             display: inline-block;
@@ -35,6 +37,8 @@
             typing 8s steps(74, end),
             blink-caret .75s step-end infinite;
             font-style: italic;
+            color: black;
+            max-width: 100%;
         }
         /* The typing effect */
         @keyframes typing {
@@ -58,7 +62,7 @@
         /* Direction buttons container (3 columns) */
         .direction-buttons {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+            grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 10px;
             padding-top: 40px;
         }
@@ -113,6 +117,7 @@
         <div class="typewriter">
             <p><span>My mother would always ask why I wanted to stay in this little village...</span></p>
         </div>
+    </div>
         <div id="canvas-container1">
             <canvas id="myCanvas" width="650" height="650"></canvas> 
         </div>
@@ -120,7 +125,7 @@
     <div class="direction-buttons">
         <!-- Left button vertically centered -->
         <div class="left-button">
-            <button><i class="fa-solid fa-caret-left"></i></button>
+            <button id="left-button"><i class="fa-solid fa-caret-left"></i></button>
         </div>
         
         <!-- Up and Down buttons stacked vertically in the center column -->
@@ -131,9 +136,8 @@
         
         <!-- Right button vertically centered -->
         <div class="right-button">
-            <button><i class="fa-solid fa-caret-right"></i></button>
+            <button id="right-button"><i class="fa-solid fa-caret-right"></i></button>
         </div>
-    </div>
     <!-- <div id="noise-container">
         <div id="noise"></div>
     </div> -->

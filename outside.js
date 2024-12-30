@@ -53,5 +53,36 @@ document.addEventListener("keydown", (event) => {
   drawCharacter();
 });
 
+
+// Event listeners for button clicks
+document.getElementById('left-button').addEventListener('click', () => {
+  if (x > 10) {
+    x -= 30;
+  }
+  drawCharacter();
+});
+
+document.getElementById('right-button').addEventListener('click', () => {
+  if (x < canvas.width - 10) {
+    x += 30;
+  }
+  drawCharacter();
+});
+
+document.getElementById('up-button').addEventListener('click', () => {
+  if (y > 20) {
+    y -= 30;
+  }
+  drawCharacter();
+});
+
+document.getElementById('down-button').addEventListener('click', () => {
+  if (y + 5 >= canvas.height) {
+    window.location.href = "outside_2.html";
+  }
+  y += 30;
+  drawCharacter();
+});
+
 // Initial draw
 drawCharacter();
