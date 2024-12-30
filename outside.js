@@ -14,6 +14,18 @@ function drawCharacter() {
   ctx.closePath();
 }
 
+// Function to highlight a button
+function highlightButton(buttonId) {
+  // Remove active class from all buttons
+  document.getElementById('left-button').classList.remove('active');
+  document.getElementById('right-button').classList.remove('active');
+  document.getElementById('up-button').classList.remove('active');
+  document.getElementById('down-button').classList.remove('active');
+
+  // Add active class to the clicked or pressed button
+  document.getElementById(buttonId).classList.add('active');
+}
+
 // const noiseContainer = document.getElementById("noise");
 // const noises = ["rustle", "stick", "crunch", "snap", "bush", "bramble", "leaves", "rock", "branch", "bug"];
 
@@ -26,6 +38,7 @@ document.addEventListener("keydown", (event) => {
         // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
         // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
       }
+      highlightButton('left-button');
       break;
     case "ArrowRight":
       if (x < canvas.width - 10) {
@@ -33,6 +46,7 @@ document.addEventListener("keydown", (event) => {
         // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
         // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
       }
+      highlightButton('right-button');
       break;
     case "ArrowUp":
       if (y > 20) {
@@ -40,6 +54,7 @@ document.addEventListener("keydown", (event) => {
         // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
         // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
       }
+      highlightButton('up-button');
       break;
     case "ArrowDown":
       if (y + 5 >= canvas.height) {
@@ -48,6 +63,7 @@ document.addEventListener("keydown", (event) => {
       y += 30;
       // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
       // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
+      highlightButton('down-button');
       break;
   }
   drawCharacter();
