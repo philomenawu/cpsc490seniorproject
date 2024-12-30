@@ -20,22 +20,7 @@
             border-right: .15em solid yellowgreen; 
             margin: 0 auto;
             animation: 
-            typing 10s steps(58, end),
-            blink-caret .75s step-end infinite;
-            font-style: italic;
-        }
-        /* The typing effect */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        .typewriterbottom p {
-            overflow: hidden; 
-            white-space: nowrap;
-            border-right: .15em solid yellowgreen; 
-            margin: 0 auto;
-            animation: 
-            typing 8s steps(62, end),
+            typing 8s steps(74, end),
             blink-caret .75s step-end infinite;
             font-style: italic;
         }
@@ -48,12 +33,24 @@
 </head>
 <body>
     <!-- Instructions -->
-    <div id="menu-container" style="display: none;">
+    <div id="menu-container">
         <div id="instructions">
             <span class="menuclose-btn">&times;</span>
             <h2>Game Instructions</h2>
             <ul>
                 <p> > Use the arrow key buttons to navigate down the mountain.</p>
+                <p> > Do not press and hold to move.</p>
+                <pre>
+               ---
+              | ^ |
+               ---
+         ---         ---
+        | &lt |       | &gt |
+         ---         ---
+               ---
+              | v |
+               ---
+                </pre>
             </ul>
         </div>
     </div>
@@ -61,14 +58,12 @@
     <div id="noise"></div>
     <div class="container">
         <div class="typewriter">
-            <p>But who else would have stayed to take care of them if not me?</p>
+            <p>My mother would always ask why I wanted to stay in this little village...</p>
         </div>
-        <div id="canvas-container2">
-            <canvas id="myCanvas2" width="650" height="650"></canvas>
-        </div>
+        <canvas id="myCanvas" width="500" height="500"></canvas> 
     </div>
     <script src='http://joeiddon.github.io/perlin/perlin.js'></script>
-    <script src="outside_2.js"></script>
+    <script src="outside.js"></script>
     <script src="menu.js"></script>
 </body>
 </html>

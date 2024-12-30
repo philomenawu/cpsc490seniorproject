@@ -55,7 +55,7 @@ const gameData = {
             'go west': { output: `You can not move west from here.`},
             'look': { output: `A large mosquito net surrounds the bed, tied to the wooden frames. You wife is soundly asleep. A mirror hangs by the bedroom door. 
                                 There's a small nightstand next to your side of the bed. Your pocket journal is neatly placed on top.`},
-            'check mirror': { output: ``,
+            'check mirror': { output: `You look at your reflection.`,
                               action: function() {
                                 gameState.action.push('mirror_1');
                                 gameState.mirrorState = true;

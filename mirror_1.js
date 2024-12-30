@@ -1,6 +1,6 @@
 // Function to handle the journal popup
 function handleMirror(userInput) {
-    const mirrorPopup = document.getElementById('mirror-popup');
+    const mirrorPopup = document.getElementById('mirrorpopup');
     const mirrorText = document.getElementById('mirror-text');
     const mirrorcloseBtn = document.querySelector('.mirrorclose-btn');
 

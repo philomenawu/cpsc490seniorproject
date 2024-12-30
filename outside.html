@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a9397ecdef.js" crossorigin="anonymous"></script>
     <title>GAME</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             gap: 20px;
-            margin-top: 20px;
+            position: relative;
+            margin-top: 50px;
         }
         .typewriter p {
             overflow: hidden; 
             white-space: nowrap;
             border-right: .15em solid yellowgreen; 
+            display: inline-block;
+            word-break: break-word;
             margin: 0 auto;
             animation: 
             typing 8s steps(74, end),
@@ -29,6 +41,60 @@
             from { width: 0 }
             to { width: 100% }
         }
+        /* #noise {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 5vw;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 10px;
+            border-right: 2px solid #ccc;
+        }
+        #noise-container {
+            display: flex;
+        } */
+ 
+        /* Direction buttons container (3 columns) */
+        .direction-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+            grid-gap: 10px;
+            padding-top: 40px;
+        }
+
+        /* Vertically center the Left and Right buttons */
+        .left-button, .right-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Up and Down buttons stacked in the center column */
+        .up-down-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* Style for the buttons */
+        button {
+            color: yellowgreen;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            background-color: black;
+        }
+        button:hover {
+            color: black;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            background-color: white;
+        }
     </style>
 </head>
 <body>
@@ -39,30 +105,38 @@
             <h2>Game Instructions</h2>
             <ul>
                 <p> > Use the arrow key buttons to navigate down the mountain.</p>
-                <p> > Do not press and hold to move.</p>
-                <pre>
-               ---
-              | ^ |
-               ---
-         ---         ---
-        | &lt |       | &gt |
-         ---         ---
-               ---
-              | v |
-               ---
-                </pre>
             </ul>
         </div>
     </div>
     <button id="menu-button">?</button>
-    <div id="noise"></div>
     <div class="container">
         <div class="typewriter">
-            <p>My mother would always ask why I wanted to stay in this little village...</p>
+            <p><span>My mother would always ask why I wanted to stay in this little village...</span></p>
         </div>
-        <canvas id="myCanvas" width="500" height="500"></canvas> 
+        <div id="canvas-container1">
+            <canvas id="myCanvas" width="650" height="650"></canvas> 
+        </div>
     </div>
-    <script src='http://joeiddon.github.io/perlin/perlin.js'></script>
+    <div class="direction-buttons">
+        <!-- Left button vertically centered -->
+        <div class="left-button">
+            <button><i class="fa-solid fa-caret-left"></i></button>
+        </div>
+        
+        <!-- Up and Down buttons stacked vertically in the center column -->
+        <div class="up-down-buttons">
+            <button id="up-button"><i class="fa-solid fa-caret-up"></i></button>
+            <button id="down-button"><i class="fa-solid fa-caret-down"></i></i></button>
+        </div>
+        
+        <!-- Right button vertically centered -->
+        <div class="right-button">
+            <button><i class="fa-solid fa-caret-right"></i></button>
+        </div>
+    </div>
+    <!-- <div id="noise-container">
+        <div id="noise"></div>
+    </div> -->
     <script src="outside.js"></script>
     <script src="menu.js"></script>
 </body>
