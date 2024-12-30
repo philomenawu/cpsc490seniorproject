@@ -86,7 +86,7 @@ document.addEventListener("keydown", (event) => {
       // Update story text
       if (y >= canvas.height / 3 && y < canvas.height / 3 + 30) { 
         const typewriterText = document.querySelector(".typewriter");
-        typewriterText.textContent = "...One step in the wrong direction and you'll find yourself in a different world...";
+        typewriterText.textContent = "...There's no point in dwelling on the past now...";
         typewriterText.style.color = "black";
         typewriterText.style.fontStyle = "italic";
       }
