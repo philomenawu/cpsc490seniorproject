@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a9397ecdef.js" crossorigin="anonymous"></script>
+    <title>GAME</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            position: relative;
+            margin-top: 80px;
+            padding: 10px;
+            margin-bottom: 30px;
+            width: auto;
+            max-width: 50%;
+            white-space: normal;
+            /* background-color: white; */
+        }
+        .typewriter p {
+            overflow-x: auto; 
+            white-space: nowrap;
+            display: inline-block;
+            word-break: break-word;
+            margin: 0 auto;
+            animation: 
+            typing 8s steps(74, end),
+            blink-caret .75s step-end infinite;
+            font-style: italic;
+            color: black;
+            max-width: 100%;
+        }
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Direction buttons container (3 columns) */
+        .direction-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            padding-top: 40px;
+        }
+
+        /* Vertically center the Left and Right buttons */
+        .left-button, .right-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Up and Down buttons stacked in the center column */
+        .up-down-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* Style for the buttons */
+        button {
+            color: yellowgreen;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            background-color: black;
+        }
+        button:hover {
+            color: black;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            background-color: white;
+        }
+        button.active {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Instructions -->
+    <div id="menu-container">
+        <div id="instructions">
+            <span class="menuclose-btn">&times;</span>
+            <h2>Game Instructions</h2>
+            <ul>
+                <p> > Use the arrow key buttons to navigate down the mountain.</p>
+            </ul>
+        </div>
+    </div>
+    <button id="menu-button">?</button>
+    <div class="container">
+        <!-- <div class="typewriter">
+            <p><span>...But who else would have stayed if not me...</span></p>
+        </div> -->
+    </div>
+        <div id="canvas-container5">
+            <canvas id="myCanvas5" width="650" height="650"></canvas> 
+        </div>
+    </div>
+    <div class="direction-buttons">
+        <!-- Left button vertically centered -->
+        <div class="left-button">
+            <button id="left-button"><i class="fa-solid fa-caret-left"></i></button>
+        </div>
+        
+        <!-- Up and Down buttons stacked vertically in the center column -->
+        <div class="up-down-buttons">
+            <button id="up-button"><i class="fa-solid fa-caret-up"></i></button>
+            <button id="down-button"><i class="fa-solid fa-caret-down"></i></button>
+        </div>
+        
+        <!-- Right button vertically centered -->
+        <div class="right-button">
+            <button id="right-button"><i class="fa-solid fa-caret-right"></i></button>
+        </div>
+    <script src="open2.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

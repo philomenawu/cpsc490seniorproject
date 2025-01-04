@@ -1,6 +1,6 @@
 const element = document.querySelector("div#canvas-container4");
-const output = document.querySelector("p#output");
+const output = document.querySelector("button#output");
 
 element.addEventListener("scrollend", (event) => {
-  output.textContent = "scrollend event fired!";
+  output.style.visibility = "visible";
 });
