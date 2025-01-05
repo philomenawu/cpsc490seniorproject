@@ -8,7 +8,7 @@ let canvasHeight = canvas.height;
 // Load the large background image
 let backgroundImage = new Image();
 // backgroundImage.src = '2x/map5.png';
-backgroundImage.src = '0.83x/church.png';
+backgroundImage.src = '0.83x/lake.png';
 
 // Character position (start at the center of the canvas)
 let x = canvasWidth / 2;
@@ -28,6 +28,10 @@ const scaleFactor = 1;
 // Character size and movement step
 const characterRadius = 5;
 const movementStep = 30;
+
+// Define the button's position on the background image
+const buttonImageX = 1685; // X-coordinate on the background image
+const buttonImageY = 660; // Y-coordinate on the background image
 
 function drawCanvas() {
   // Clear the canvas
@@ -60,7 +64,30 @@ function drawCanvas() {
   ctx.fillStyle = 'yellowgreen';
   ctx.fill();
   ctx.closePath();
+
+// Update button visibility and position
+const endButton = document.getElementById('church-button');
+if (
+  buttonImageX >= viewportX &&
+  buttonImageX <= viewportX + (canvasWidth / scaleFactor) &&
+  buttonImageY >= viewportY &&
+  buttonImageY <= viewportY + (canvasHeight / scaleFactor)
+) {
+  // Translate background image coordinates to scaled canvas coordinates
+  const buttonCanvasX = (buttonImageX - viewportX);
+  const buttonCanvasY = (buttonImageY - viewportY) * 0.8;
+
+  // Position the button in the canvas coordinate system
+  endButton.style.left = `${buttonCanvasX}px`;
+  endButton.style.top = `${buttonCanvasY}px`;
+  endButton.style.visibility = 'visible';
+} else {
+  endButton.style.visibility = 'hidden';
 }
+}
+
+
+
 
 // Function to highlight a button
 function highlightButton(buttonId) {
