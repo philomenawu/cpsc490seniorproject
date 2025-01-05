@@ -442,7 +442,7 @@ body {
     height: 55vw;
     max-width: 55vh;
     max-height: 55vh;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     overflow: hidden;
 }
 
