@@ -121,7 +121,7 @@ const gameData = {
             'go east': { nextRoom: 'start', output: `You move east.` },
             'go west': { output: `You can not move west from here.`},
             'look': { output: `The dining table is cluttered with crumpled up homework sheets and dull pencils. An unlit gas lamp sits at the end of the table.` },
-            'take lamp': { 
+            'pick up lamp': { 
                       output: `You shake a match out of the matchbox and light the lamp. The light flickers wildly against the walls as you pick it up.`,
                       action: function() {
                         if (!gameState.inventory.includes('lamp')) {
@@ -135,11 +135,11 @@ const gameData = {
                         }
                         else {
                         gameData.start.commands['go south'].output = `You really should answer the telephone call before you leave the house.`;
-                        gameData.diningroom.commands['take lamp'].output = `You are already holding the lamp.`;
+                        gameData.diningroom.commands['pick up lamp'].output = `You are already holding the lamp.`;
                         gameData.diningroom.commands['look'].output = `The dining table is cluttered with crumpled up homework sheets and dull pencils.`
                         }
                       }},
-            'help': { output: `VALID COMMAND EXAMPLES: look, go north, go south, go east, go west, examine [item], take [item].`}
+            'help': { output: `VALID COMMAND EXAMPLES: look, go north, go south, go east, go west, examine [item], pick up [item].`}
             }
         }
     };
