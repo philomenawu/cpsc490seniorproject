@@ -89,6 +89,53 @@
             background-color: white;
             color: black;
         }
+        #canvas-container5 {
+            position: relative;
+            width: 55vw;
+            height: 55vw;
+            max-width: 55vh;
+            max-height: 55vh;
+            overflow: hidden;
+        }
+
+        #myCanvas5 {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat;
+        }
+        #church-button {
+            visibility: hidden;
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            border: 1px solid yellow;
+            background-color: yellow;
+            opacity: 0.1;
+            /* background-color: white; */
+        }
+
+        #church-button a {
+            color: yellow;
+            text-decoration: none;
+        }
+
+        #lake-button {
+            visibility: hidden;
+            position: absolute;
+            height: 100px;
+            width: 175px;
+            border: 1px solid blue;
+            background-color: blue;
+            opacity: 0.1;
+        }
+
+        #lake-button a {
+            color: blue;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -109,8 +156,8 @@
         </div> -->
     </div>
         <div id="canvas-container5">
-            <button id="church-button"></button>
-            <button id="lake-button"></button>
+            <button id="church-button" onclick="window.location.href='index.html';"><a href="index.html">church</a></button>
+            <button id="lake-button" onclick="window.location.href='index.html';"><a href="index.html">lake</a></button>
             <canvas id="myCanvas5" width="650" height="650"></canvas> 
         </div>
     </div>

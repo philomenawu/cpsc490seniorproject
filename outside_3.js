@@ -33,7 +33,7 @@ function highlightButton(buttonId) {
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "ArrowLeft":
-      if (x > 10) {
+      if (x > 50) {
         x -= 30; 
         // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
         // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
@@ -41,7 +41,7 @@ document.addEventListener("keydown", (event) => {
       highlightButton('left-button');
       break;
     case "ArrowRight":
-      if (x < canvas.width - 10) {
+      if (x < canvas.width - 50) {
         x += 30;
         // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
         // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
@@ -101,14 +101,14 @@ document.addEventListener("keydown", (event) => {
 
 // Event listeners for button clicks
 document.getElementById('left-button').addEventListener('click', () => {
-  if (x > 10) {
+  if (x > 50) {
     x -= 30;
   }
   drawCharacter();
 });
 
 document.getElementById('right-button').addEventListener('click', () => {
-  if (x < canvas.width - 10) {
+  if (x < canvas.width - 50) {
     x += 30;
   }
   drawCharacter();

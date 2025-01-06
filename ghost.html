@@ -46,13 +46,42 @@
         }
 
         #output-container {
-            height: 100px; /* Set a fixed height */
+            height: 100px;
             overflow: hidden;
             text-align: center;
             margin-top: 40px;
         }
         #output {
             visibility: hidden;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: monospace;
+            background-color: rgb(0, 0, 0);
+            border: 2px solid #ffffff;
+        }
+
+        #output a {
+            color: yellowgreen;
+            text-decoration: none;
+        }
+
+        #canvas-container4 {
+            position: relative;
+            width: 55vw;
+            height: 55vw;
+            max-width: 55vh;
+            max-height: 55vh;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid white;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        #canvas-container4 img {
+            width: auto;
+            height: 100%;
         }
 
     </style>
