@@ -28,16 +28,6 @@ function updateGameOutput(message, userInput = '') {
     outputDiv.scrollTop = outputDiv.scrollHeight;
 }
 
-// Check if user input is an alias
-function resolveAlias(userInput, commands) {
-    for (const [command, data] of Object.entries(commands)) {
-        if (command === userInput || (data.aliases && data.aliases.includes(userInput))) {
-            return command;
-        }
-    }
-    return userInput;
-}
-
 // Function to calculate Levenshtein distance using two matrix rows
 function levenshtein(str1, str2) {
     const m = str1.length;
@@ -93,9 +83,6 @@ function parseInput() {
         updateGameOutput("Unable to process command.");
         return;
     }
-
-    // Check if command input is an alias
-    userInput = resolveAlias(userInput, roomData.commands);
     
     // Handle typo correction using levenshtein function
     if (!roomData.commands[userInput]) {
@@ -143,7 +130,7 @@ function parseInput() {
         // Check if player has ability to look
         if (userInput === 'look') {
             if (!gameState.inventory.includes('glasses')) {
-                updateGameOutput('You can not see clearly without your glasses. <i>It must have fallen to the floor somewhere...</i>', userInput);
+                updateGameOutput('You can not see clearly without your <span style="color: yellow;">GLASSES</span>. <i>It must have fallen to the floor somewhere...</i>', userInput);
             }
             else {
                 updateGameOutput(command.output, userInput);
@@ -151,7 +138,7 @@ function parseInput() {
         }
         else if (userInput == 'pick up telephone') {
             if (gameState.action.includes('call_1')) {
-                updateGameOutput('You already answered the telephone.', userInput);
+                updateGameOutput('You already answered the <span style="color: yellow;">TELEPHONE</span>.', userInput);
             }
             else {
                 if (!gameState.inventory.includes('lamp')) {
