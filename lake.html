@@ -110,7 +110,7 @@
             height: 27.5vw;
             max-width: 55vh;
             max-height: 27.5vh;
-            background-image: url('2x/lake1.png');
+            /* background-image: url('2x/lake1.png'); */
             background-size: cover;
             background-position: center;
             border: 2px solid white;
@@ -124,6 +124,11 @@
             background-color: #ffffff;
             border: 2px solid rgb(255, 0, 0);
         } */
+        
+        #topimg {
+            width: 100%;
+            height: 100%;
+        }
 
         #lakecontainer {
             height: 30vh;
@@ -131,7 +136,7 @@
             padding: 20px;
             background-color: #000;
             border: 2px solid white;
-            /* overflow-y: auto; */
+            overflow-y: auto;
         }
 
         @media (max-width: 769px) {
@@ -141,7 +146,7 @@
                 padding: 20px;
                 background-color: #000;
                 border: 2px solid white;
-                /* overflow-y: auto; */
+                overflow-y: auto;
             }
         }
 
@@ -195,7 +200,9 @@
         </div>
     </div>
     <button id="menu-button">?</button>
-    <div id="canvas-container1"></div>
+    <div id="canvas-container1">
+        <img id="topimg" src="2x/lake1.png">
+    </div>
     <br>
     <div id="lakecontainer">
         <div id="textoutput"></div>
@@ -206,7 +213,8 @@
             </span>
         </div>
     </div>
-    <script src="outside.js"></script>
+    <script src="laketext.js"></script>
+    <script src="lakeparser.js"></script>
     <script src="menu.js"></script>
 </body>
 </html>
