@@ -59,23 +59,6 @@ document.addEventListener("keydown", (event) => {
     case "ArrowDown":
       if (y + 5 >= canvas.height) {
         window.location.href = "ghost.html";
-        // const popupWidth = 600;
-        // const popupHeight = 600;
-
-        // const left1 = (screen.width - 2 * popupWidth) / 2;
-        // const top1 = (screen.height - popupHeight) / 2;
-        // const left2 = left1 + popupWidth + 50;
-        // const top2 = (screen.height - popupHeight) / 2;
-        // window.open(
-        //   "dialogue_2.html",
-        //   "popupWindow2",
-        //   `width=${popupWidth},height=${popupHeight},left=${left2},top=${top2},scrollbars=no,resizable=no`
-        // );
-        // window.open(
-        // "ghost.html",
-        // "popupWindow1",
-        // `width=${popupWidth},height=${popupHeight},left=${left1},top=${top1},scrollbars=no,resizable=no`
-        // );
       }
       y += 30;
       highlightButton('down-button');

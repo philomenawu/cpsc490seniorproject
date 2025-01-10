@@ -129,79 +129,6 @@ function lakeupdateButtonPosition(buttonId, buttonImageX, buttonImageY, scaleFac
   }
 }
 
-// function drawCanvas() {
-//   // Clear the canvas
-//   ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-
-//   // Adjust the visible area of the image based on the scale factor
-//   const scaledViewportWidth = canvasWidth / scaleFactor;
-//   const scaledViewportHeight = canvasHeight / scaleFactor;
-
-//   // Draw the visible portion of the background image
-//   ctx.drawImage(
-//     backgroundImage,
-//     viewportX,
-//     viewportY,
-//     scaledViewportWidth,
-//     scaledViewportHeight,
-//     0,
-//     0,
-//     canvasWidth,
-//     canvasHeight
-//   );
-
-//   // Adjust character's position relative to the viewport and scale
-//   const characterPosX = (x - viewportX) * scaleFactor;
-//   const characterPosY = (y - viewportY) * scaleFactor;
-
-//   // Draw the character
-//   ctx.beginPath();
-//   ctx.arc(characterPosX, characterPosY, characterRadius, 0, Math.PI * 2);
-//   ctx.fillStyle = 'yellowgreen';
-//   ctx.fill();
-//   ctx.closePath();
-
-// // Update button visibility and position
-// const churchButton = document.getElementById('church-button');
-// const lakeButton = document.getElementById('lake-button');
-
-// if (
-//   buttonImageX >= viewportX &&
-//   buttonImageX <= viewportX + (canvasWidth / scaleFactor) &&
-//   buttonImageY >= viewportY - 100 &&
-//   buttonImageY <= viewportY + (canvasHeight / scaleFactor)
-// ) {
-//   // Translate background image coordinates to scaled canvas coordinates
-//   const buttonCanvasX = (buttonImageX - viewportX);
-//   const buttonCanvasY = (buttonImageY - viewportY) * 0.8;
-
-//   // Position the button in the canvas coordinate system
-//   churchButton.style.left = `${buttonCanvasX}px`;
-//   churchButton.style.top = `${buttonCanvasY}px`;
-//   churchButton.style.visibility = 'visible';
-// } else {
-//   churchButton.style.visibility = 'hidden';
-// }
-
-// if (
-//   lakebuttonImageX >= viewportX - 200 &&
-//   lakebuttonImageX <= viewportX + (canvasWidth / scaleFactor) &&
-//   lakebuttonImageY >= viewportY &&
-//   lakebuttonImageY <= viewportY + (canvasHeight / scaleFactor)
-// ) {
-//   // Translate background image coordinates to scaled canvas coordinates
-//   const lakebuttonCanvasX = (lakebuttonImageX - viewportX) * 0.7;
-//   const lakebuttonCanvasY = (lakebuttonImageY - viewportY) * 0.8;
-
-//   // Position the button in the canvas coordinate system
-//   lakeButton.style.left = `${lakebuttonCanvasX}px`;
-//   lakeButton.style.top = `${lakebuttonCanvasY}px`;
-//   lakeButton.style.visibility = 'visible';
-// } else {
-//   lakeButton.style.visibility = 'hidden';
-// }
-// }
-
 // Function to highlight a button
 function highlightButton(buttonId) {
   // Remove active class from all buttons
@@ -258,8 +185,6 @@ document.addEventListener("keydown", (event) => {
   drawCanvas();
 });
 
-
-
 // Event listeners for button clicks
 document.getElementById('left-button').addEventListener('click', () => {
   if (x > 50) {
@@ -300,7 +225,6 @@ document.getElementById('down-button').addEventListener('click', () => {
   }
   drawCanvas();
 });
-
 
 // Draw the initial canvas once the background image is loaded
 backgroundImage.onload = drawCanvas;

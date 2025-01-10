@@ -3,13 +3,12 @@ const gameData = {
     start: {
         description: `.`,
         commands: {
-            'look': { 
-                        output: `You're at a small lake. Hidden deep within the mountains, it's been a while since you last came here...it's been many summers by now. 
-                        You wonder if your children ever play around here. The thickets are overgrown and the
-                        water level is much lower than you remember. You swing your lamp to check for any leeches around your feet. The large milky moon shines brightly over you. 
-                        The chorus of crickets and frogs are awfully loud tonight. You see a large tree <span style="color: yellow;">STUMP</span> in the distance and the broken pieces 
-                        of a small wooden <span style="color: yellow;">BOAT</span>. You notice a lone <span style="color: yellow;">FROG</span> leaping by the 
-                        <span style="color: yellow;">SHORE</span>. <i>You wonder if you can catch it...</i>`},
+            'look': { output: `You're at a small lake. Hidden deep within the mountains, it's been a while since you last came here...it's been many summers by now. 
+                      You wonder if your children ever play around here. The thickets are overgrown and the
+                      water level is much lower than you remember. You swing your lamp to check for any leeches around your feet. The large milky moon shines brightly over you. 
+                      The chorus of crickets and frogs are awfully loud tonight. You see a large tree <span style="color: yellow;">STUMP</span> in the distance and the broken pieces 
+                      of a small wooden <span style="color: yellow;">BOAT</span>. You notice a lone <span style="color: yellow;">FROG</span> leaping by the 
+                      <span style="color: yellow;">SHORE</span>. <i>You wonder if you can catch it...</i>`},
             'examine frog': { output: `You need to catch the <span style="color: yellow;">FROG</span> first before you can examine it.`},
             'examine boat': { output: `The <span style="color: yellow;">BOAT</span> is too far for you to examine.`},
             'examine stump': { output: `The <span style="color: yellow;">STUMP</span> is too far for you to examine.`},
@@ -23,13 +22,13 @@ const gameData = {
                   document.getElementById('topimg').src="2x/stump.png";
                 }
             },
-            'go to shore': { nextRoom: 'stump', output: `You move to the <span style="color: yellow;">SHORE</span>.`,
+            'go to shore': { nextRoom: 'shore', output: `You move to the <span style="color: yellow;">SHORE</span>.`,
                 action: function () {
                   document.getElementById('topimg').src="2x/shore.png";
                 }
             },
-            'go to frog': { nextRoom: 'shore', output: `The frog is by the <span style="color: yellow;">SHORE</span>.`},
-            'put down lamp': {},
+            'go to frog': { output: `The frog is by the <span style="color: yellow;">SHORE</span>.`},
+            'put down lamp': { output: ``},
             'help': { output: `VALID COMMAND EXAMPLES: look, examine [item], go to [].<br>
                 <i>HINT: Look around to search for clues and see what items can be interacted with.</i>`}
         }
@@ -49,6 +48,9 @@ const gameData = {
                                 if (gameState.inventory.includes('net')) {
                                     gameData.shore.commands['pick up frog'].output = `You slowly approach the frog before swiftly sweeping your net over it...</i>`
                                     gameState.inventory.push('frog');
+                                    gameData.shore.commands['pick up frog'].action = function () {
+                                        document.getElementById('topimg').src="2x/frog.png";
+                                    }
                                     gameData.shore.commands['examine frog'].action = function() {
                                         window.location.href = 'transition.html';
                                     };
@@ -82,6 +84,9 @@ const gameData = {
                                 if (gameState.inventory.includes('lamp')) {
                                     gameData.shore.commands['pick up frog'].output = `You slowly approach the frog before swiftly sweeping your net over it...</i>`
                                     gameState.inventory.push('frog');
+                                    gameData.shore.commands['pick up frog'].action = function () {
+                                        document.getElementById('topimg').src="2x/frog.png";
+                                    }
                                     gameData.shore.commands['examine frog'].action = function() {
                                         window.location.href = 'transition.html';
                                     };

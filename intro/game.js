@@ -1,12 +1,3 @@
-// Cut scene art
-// separate javascript file linked in html file
-// replace container when leaving the room
-// iframe (use separate html file), load separate html file
-// look into sending info/data through
-
-// Responsive design
-// Different containers (hide/show depending on scene)
-
 // Initial game state
 let gameState = {
     currentRoom: 'start',
