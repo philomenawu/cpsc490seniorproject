@@ -2,7 +2,7 @@ let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 
 let x = canvas.width / 2;
-let y = 120;
+let y = 620;
 
 // Circle (character)
 function drawCharacter() {
@@ -57,10 +57,9 @@ document.addEventListener("keydown", (event) => {
       highlightButton('up-button');
       break;
     case "ArrowDown":
-      if (y + 5 >= canvas.height) {
-        window.location.href = "outside_2.html";
-      }
+      if (y < canvas.height - 50) {
       y += 30;
+      }
       // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
       // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
       highlightButton('down-button');

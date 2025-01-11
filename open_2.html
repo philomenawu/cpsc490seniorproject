@@ -24,12 +24,11 @@
             width: auto;
             max-width: 50%;
             white-space: normal;
-            background-color: white;
+            /* background-color: white; */
         }
         .typewriter p {
             overflow-x: auto; 
             white-space: nowrap;
-            border-right: .15em solid yellowgreen; 
             display: inline-block;
             word-break: break-word;
             margin: 0 auto;
@@ -45,7 +44,7 @@
             from { width: 0 }
             to { width: 100% }
         }
- 
+
         /* Direction buttons container (3 columns) */
         .direction-buttons {
             display: grid;
@@ -90,78 +89,52 @@
             background-color: white;
             color: black;
         }
-
-        #canvas-container1 {
+        #canvas-container5 {
             position: relative;
             width: 55vw;
-            height: 27.5vw;
+            height: 55vw;
             max-width: 55vh;
-            max-height: 27.5vh;
-            background-size: cover;
-            background-position: center;
-            border: 2px solid white;
+            max-height: 55vh;
+            overflow: hidden;
         }
-        
-        #topimg {
+
+        #myCanvas5 {
+            display: block;
             width: 100%;
             height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat;
+        }
+        #church-button {
+            visibility: hidden;
+            position: absolute;
+            height: 20%;
+            width: 20%;
+            border: 1px solid yellow;
+            background-color: yellow;
+            opacity: 0.1;
+            /* background-color: white; */
         }
 
-        #churchcontainer {
-            height: 30vh;
-            width: 28.5vw;
-            padding: 20px;
-            background-color: #000;
-            border: 2px solid white;
-            overflow-y: auto;
+        #church-button a {
+            color: yellow;
+            text-decoration: none;
         }
 
-        @media (max-width: 769px) {
-            #churchcontainer {
-                height: 30vh;
-                width: 45vw;
-                padding: 20px;
-                background-color: #000;
-                border: 2px solid white;
-                overflow-y: auto;
-            }
+        #lake-button {
+            visibility: hidden;
+            position: absolute;
+            height: 20%;
+            width: 35%;
+            border: 1px solid blue;
+            background-color: blue;
+            opacity: 0.1;
         }
 
-        #textoutput {
-            height: 25vh;
-            overflow-y: scroll;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #textoutput > :first-child {
-            margin-top: auto !important;
-        }
-
-
-        #inputcontainer {
-            display: flex;
-            align-items: center;
-        }
-
-        #prompt {
-            margin-right: 10px;
-        }
-
-        #inputwrapper {
-            display: inline-block;
-            border: none;
-        }
-
-        #userinput {
-            border: none;
-            background: transparent;
-            font-family: monospace;
-            outline: none;
-            border: 0.5px dashed yellowgreen;
-            width: 100%;
-            color: yellowgreen;
+        #lake-button a {
+            color: blue;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -177,21 +150,32 @@
         </div>
     </div>
     <button id="menu-button">?</button>
-    <div id="canvas-container1">
-        <img id="topimg" src="2x/church_1.png">
+    <div class="container">
     </div>
-    <br>
-    <div id="churchcontainer">
-        <div id="textoutput"></div>
-        <div id="inputcontainer">
-            <span id="prompt">What would you like to do? > </span>
-            <span id="inputwrapper">
-                <input type="text" id="userinput" autocomplete="off" autofocus="autofocus"/>
-            </span>
+        <div id="canvas-container5">
+            <button id="church-button" onclick="window.location.href='church.html';"><a href="church.html">church</a></button>
+            <button id="lake-button" onclick="window.location.href='lake.html';"><a href="lake.html">lake</a></button>
+            <canvas id="myCanvas5" width="650" height="650"></canvas> 
         </div>
     </div>
-    <script src="churchtext.js"></script>
-    <script src="lakeparser.js"></script>
+    <div class="direction-buttons">
+        <!-- Left button vertically centered -->
+        <div class="left-button">
+            <button id="left-button"><i class="fa-solid fa-caret-left"></i></button>
+        </div>
+        
+        <!-- Up and Down buttons stacked vertically in the center column -->
+        <div class="up-down-buttons">
+            <button id="up-button"><i class="fa-solid fa-caret-up"></i></button>
+            <button id="down-button"><i class="fa-solid fa-caret-down"></i></button>
+        </div>
+        
+        <!-- Right button vertically centered -->
+        <div class="right-button">
+            <button id="right-button"><i class="fa-solid fa-caret-right"></i></button>
+        </div>
+    </div>
+    <script src="openmap_2.js"></script>
     <script src="menu.js"></script>
 </body>
 </html>

@@ -34,7 +34,7 @@
             word-break: break-word;
             margin: 0 auto;
             animation: 
-            typing 8s steps(74, end),
+            typing 8s steps(75, end),
             blink-caret .75s step-end infinite;
             font-style: italic;
             color: black;
@@ -94,74 +94,19 @@
         #canvas-container1 {
             position: relative;
             width: 55vw;
-            height: 27.5vw;
+            height: 55vw;
             max-width: 55vh;
-            max-height: 27.5vh;
+            max-height: 55vh;
+            background-image: url('2x/end.png');
             background-size: cover;
             background-position: center;
-            border: 2px solid white;
-        }
-        
-        #topimg {
-            width: 100%;
-            height: 100%;
         }
 
-        #churchcontainer {
-            height: 30vh;
-            width: 28.5vw;
-            padding: 20px;
-            background-color: #000;
+        #myCanvas {
+            height: 100%;
+            width: 100%;
             border: 2px solid white;
             overflow-y: auto;
-        }
-
-        @media (max-width: 769px) {
-            #churchcontainer {
-                height: 30vh;
-                width: 45vw;
-                padding: 20px;
-                background-color: #000;
-                border: 2px solid white;
-                overflow-y: auto;
-            }
-        }
-
-        #textoutput {
-            height: 25vh;
-            overflow-y: scroll;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #textoutput > :first-child {
-            margin-top: auto !important;
-        }
-
-
-        #inputcontainer {
-            display: flex;
-            align-items: center;
-        }
-
-        #prompt {
-            margin-right: 10px;
-        }
-
-        #inputwrapper {
-            display: inline-block;
-            border: none;
-        }
-
-        #userinput {
-            border: none;
-            background: transparent;
-            font-family: monospace;
-            outline: none;
-            border: 0.5px dashed yellowgreen;
-            width: 100%;
-            color: yellowgreen;
         }
     </style>
 </head>
@@ -177,21 +122,36 @@
         </div>
     </div>
     <button id="menu-button">?</button>
-    <div id="canvas-container1">
-        <img id="topimg" src="2x/church_1.png">
-    </div>
-    <br>
-    <div id="churchcontainer">
-        <div id="textoutput"></div>
-        <div id="inputcontainer">
-            <span id="prompt">What would you like to do? > </span>
-            <span id="inputwrapper">
-                <input type="text" id="userinput" autocomplete="off" autofocus="autofocus"/>
-            </span>
+    <div class="container">
+        <div class="typewriter">
+            <p><span>My mother would always ask me why I chose to stay in this little village...</span></p>
         </div>
     </div>
-    <script src="churchtext.js"></script>
-    <script src="lakeparser.js"></script>
+        <div id="canvas-container1">
+            <canvas id="myCanvas" width="650" height="650"></canvas> 
+        </div>
+    </div>
+    <div class="direction-buttons">
+        <!-- Left button vertically centered -->
+        <div class="left-button">
+            <button id="left-button"><i class="fa-solid fa-caret-left"></i></button>
+        </div>
+        
+        <!-- Up and Down buttons stacked vertically in the center column -->
+        <div class="up-down-buttons">
+            <button id="up-button"><i class="fa-solid fa-caret-up"></i></button>
+            <button id="down-button"><i class="fa-solid fa-caret-down"></i></i></button>
+        </div>
+        
+        <!-- Right button vertically centered -->
+        <div class="right-button">
+            <button id="right-button"><i class="fa-solid fa-caret-right"></i></button>
+        </div>
+    </div>
+    <!-- <div id="noise-container">
+        <div id="noise"></div>
+    </div> -->
+    <script src="end.js"></script>
     <script src="menu.js"></script>
 </body>
 </html>
