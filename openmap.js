@@ -30,8 +30,8 @@ const characterRadius = 5;
 const movementStep = 30;
 
 // Define the button's position on the background image
-const buttonImageX = 1815;
-const buttonImageY = 670;
+const buttonImageX = 1816;
+const buttonImageY = 673;
 
 const lakebuttonImageX = 430;
 const lakebuttonImageY = 1750;

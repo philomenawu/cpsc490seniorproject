@@ -108,6 +108,34 @@
             border: 2px solid white;
             overflow-y: auto;
         }
+
+        #button-container {
+            z-index: 1000;
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #button {
+            height: 100px;
+            width: 100px;
+            border: 1px solid yellow;
+            background-color: yellow;
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 769px) {
+            #button {
+                height: 50px;
+                width: 50px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -128,6 +156,9 @@
         </div>
     </div>
         <div id="canvas-container1">
+            <div id="button-container">
+                <button id="button" onclick="window.location.href='church.html';"><a href="church.html"></a></button>
+            </div>
             <canvas id="myCanvas" width="650" height="650"></canvas> 
         </div>
     </div>

@@ -51,7 +51,7 @@ const gameData = {
                                         document.getElementById('topimg').src="2x/frog.png";
                                     }
                                     gameData.shore.commands['examine frog'].action = function() {
-                                        window.location.href = 'transition.html';
+                                        window.location.href = 'frog.html';
                                     };
                                 }
                                 else {
@@ -88,7 +88,7 @@ const gameData = {
                                         document.getElementById('topimg').src="2x/frog.png";
                                     }
                                     gameData.shore.commands['examine frog'].action = function() {
-                                        window.location.href = 'transition.html';
+                                        window.location.href = 'frog.html';
                                     };
                                 }
                                 else {

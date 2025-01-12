@@ -49,7 +49,7 @@ document.addEventListener("keydown", (event) => {
       highlightButton('right-button');
       break;
     case "ArrowUp":
-      if (y > 20) {
+      if (y > 100) {
         y -= 30;
         // const randomNoise = noises[Math.floor(Math.random() * noises.length)];
         // noiseContainer.innerHTML += `<p>${randomNoise}</p>`;
@@ -85,17 +85,16 @@ document.getElementById('right-button').addEventListener('click', () => {
 });
 
 document.getElementById('up-button').addEventListener('click', () => {
-  if (y > 20) {
+  if (y > 100) {
     y -= 30;
   }
   drawCharacter();
 });
 
 document.getElementById('down-button').addEventListener('click', () => {
-  if (y + 5 >= canvas.height) {
-    window.location.href = "outside_2.html";
+  if (y < canvas.height - 50) {
+    y += 30;
   }
-  y += 30;
   drawCharacter();
 });
 
